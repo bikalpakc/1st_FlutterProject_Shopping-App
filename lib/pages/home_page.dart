@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
 
 class HomePage extends StatelessWidget {
+   final String name = "Bikalpa KC";
   @override
   Widget build(BuildContext context) {
-    String name = "Bikalpa KC";
     return Scaffold(
       appBar: AppBar(
         title: Padding(
