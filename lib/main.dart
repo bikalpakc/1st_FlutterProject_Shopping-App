@@ -12,15 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        //home: HomePage(),
-        theme: ThemeData(
-            primarySwatch: Colors.brown,
-            fontFamily: GoogleFonts.lato().fontFamily),
-        initialRoute: "/",
-        routes: {
-          "/": (context) => LoginPage(),
-          MyRoutes.HomeRoute: (context) => HomePage(),
-          MyRoutes.LoginRoute: (context) => LoginPage()
-        },);
+      //home: HomePage(),
+      theme: ThemeData(
+          primarySwatch: Colors.brown,
+          fontFamily: GoogleFonts.lato().fontFamily),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => LoginPage(),
+        MyRoutes.HomeRoute: (context) => HomePage(),
+        MyRoutes.LoginRoute: (context) => LoginPage()
+      },
+    );
   }
 }
