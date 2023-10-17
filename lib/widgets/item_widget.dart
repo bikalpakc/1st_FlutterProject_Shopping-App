@@ -2,12 +2,13 @@ import "package:flutter/material.dart";
 import "package:flutter_catalogue/models/catalogue.dart";
 
 class itemWidget extends StatelessWidget {
-
   final Items items;
 
-  const itemWidget({Key? key, required this.items}):assert(items!=null), super(key: key);
+  const itemWidget({Key? key, required this.items})
+      : assert(items != null),
+        super(key: key);
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
@@ -21,7 +22,7 @@ class itemWidget extends StatelessWidget {
           "\$${items.price}",
           textScaleFactor: 1.5,
           style: TextStyle(
-            color: Colors.deepPurple,
+            color: Colors.orange,
             fontWeight: FontWeight.bold,
           ),
         ),
