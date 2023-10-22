@@ -6,8 +6,6 @@ import 'package:flutter_catalogue/widgets/themes.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
-
-
 class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
