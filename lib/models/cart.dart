@@ -19,7 +19,7 @@ class CartModel {
   set catalog(CatalogModel newCatalog) {
     assert(newCatalog != null);
     _catalog = newCatalog;
-  }
+  } 
 
   // Get items in the cart
   List<Items> get items => _itemIds.map((id) => _catalog.getById(id)).toList();
