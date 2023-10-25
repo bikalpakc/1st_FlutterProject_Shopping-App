@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_catalogue/utils/Routes.dart";
+import "package:velocity_x/velocity_x.dart";
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
         LoginButtonPress = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.HomeRoute);
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         LoginButtonPress = false;
       });
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -44,9 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Text("Welcome $name",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    )),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: context.theme.secondaryHeaderColor)),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 32.0),
