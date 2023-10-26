@@ -1,4 +1,6 @@
+import 'package:flutter_catalogue/core/store.dart';
 import 'package:flutter_catalogue/models/catalogue.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel {
 
@@ -24,15 +26,25 @@ class CartModel {
   num get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
 
-  // Add Item
+  // // Add Item
 
-  void add(Items item) {
-    _itemIds.add(item.id);
-  }
+  // void add(Items item) {
+  //   _itemIds.add(item.id);
+  // }
 
   // Remove Item
 
   void remove(Items item) {
     _itemIds.remove(item.id);
+  }
+}
+
+class AddMutation extends VxMutation<MyStore> {
+  final Items item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store?.cart._itemIds.add(item.id);
   }
 }
