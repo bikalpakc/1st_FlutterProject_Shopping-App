@@ -6,7 +6,9 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.white,
+      badgeTheme: BadgeThemeData(backgroundColor: Colors.amber),
       canvasColor: creamColor,
+      chipTheme: ChipThemeData(backgroundColor: Colors.black),
       buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
       textTheme: TextTheme(bodySmall: TextStyle(color: darkBluishColor)),
       appBarTheme: AppBarTheme(
@@ -16,14 +18,17 @@ class MyTheme {
         toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
         titleTextStyle: Theme.of(context).textTheme.titleLarge,
       ),
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber)
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.brown)
           .copyWith(secondary: darkBluishColor));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
       // brightness: Brightness.dark,
+
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.black,
+      badgeTheme: BadgeThemeData(backgroundColor: Colors.amber),
       canvasColor: darkCreamColor,
+      chipTheme: ChipThemeData(backgroundColor: Colors.black),
       buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
       textTheme: TextTheme(bodySmall: TextStyle(color: creamColor)),
       appBarTheme: AppBarTheme(
@@ -45,8 +50,11 @@ class MyTheme {
             )
             .titleLarge,
       ),
-      colorScheme: ColorScheme.fromSwatch()
-          .copyWith(primary: darkBluishColor, secondary: Colors.white));
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: darkBluishColor,
+        secondary: Colors.white,
+        brightness: Brightness.dark,
+      ));
 
   //Colors
   static Color creamColor = Color(0xfff5f5f5);

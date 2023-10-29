@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           mutations: {AddMutation, RemoveMutation},
           builder: (context, store, status) => FloatingActionButton(
               onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.teal,
               child: Icon(
                 CupertinoIcons.cart,
                 color: Colors.white,
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: SafeArea(
           child: Container(
-            padding: Vx.m32,
+            padding: Vx.m24,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

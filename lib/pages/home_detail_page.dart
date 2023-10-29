@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catalogue/models/catalogue.dart';
 import 'package:flutter_catalogue/widgets/home_widgets/add_to_cart.dart';
@@ -20,7 +21,12 @@ class HomeDetailPage extends StatelessWidget {
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.bold.xl4.red800.make(),
+            "\$${catalog.price}"
+                .text
+                .bold
+                .xl4
+                .color(context.theme.colorScheme.secondary)
+                .make(),
             AddToCart(
               catalog: catalog,
             ).wh(120, 50)
@@ -34,30 +40,82 @@ class HomeDetailPage extends StatelessWidget {
             Hero(
               tag: Key(catalog.id.toString()),
               child: Image.network(catalog.image),
-            ).h32(context),
+            ).h(215),
+            // .h32(context),
             Expanded(
                 child: VxArc(
-              height: 30.0,
+              height: 45.0,
               arcType: VxArcType.convey,
               edge: VxEdge.top,
-              child: Container(
-                color: context.cardColor,
-                width: context.screenWidth,
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    catalog.name.text.xl4
-                        .color(context.accentColor)
-                        .bold
-                        .make(),
-                    catalog.desc.text.textStyle(context.captionStyle).xl.make(),
-                    10.heightBox,
-                    "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
-                        .text
-                        .textStyle(context.captionStyle)
-                        .make()
-                        .p16()
+                    Container(
+                      color: context.cardColor,
+                      width: context.screenWidth,
+                      child: Column(
+                        children: [
+                          catalog.name.text.xl4
+                              .color(context.accentColor)
+                              .bold
+                              .make(),
+                          catalog.desc.text
+                              .textStyle(context.captionStyle)
+                              .xl
+                              .make(),
+                          15.heightBox,
+                          Row(
+                            children: [
+                              Icon(CupertinoIcons.star_circle_fill,
+                                      color: Colors.amber)
+                                  .px16()
+                                  .py8(),
+                              "100% Genuine"
+                                  .text
+                                  .textStyle(context.captionStyle)
+                                  .make()
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(CupertinoIcons.gift_fill, color: Colors.pink)
+                                  .px16()
+                                  .py8(),
+                              "Cash on delivery"
+                                  .text
+                                  .textStyle(context.captionStyle)
+                                  .make()
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(CupertinoIcons.calendar_circle_fill,
+                                      color: Colors.blueAccent)
+                                  .px16()
+                                  .py8(),
+                              "14 days easy return"
+                                  .text
+                                  .textStyle(context.captionStyle)
+                                  .make()
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(CupertinoIcons.checkmark_shield_fill,
+                                      color: Colors.green)
+                                  .px16()
+                                  .py8(),
+                              "Bikalpa Approves"
+                                  .text
+                                  .textStyle(context.captionStyle)
+                                  .make()
+                            ],
+                          )
+                        ],
+                      ).py64(),
+                    ),
                   ],
-                ).py64(),
+                ),
               ),
             ))
           ],

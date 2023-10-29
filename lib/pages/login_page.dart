@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: context.theme.secondaryHeaderColor)),
+                        color: context.theme.iconTheme.color)),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 32.0),
